@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Background
+  - Water
+  - UI
+  - Golem
+  - Ground
+  - UIOnTop
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 52671583
+    locked: 0
+  - name: BackTiles
+    uniqueID: 3951212031
+    locked: 0
+  - name: BackTiles
+    uniqueID: 3068680663
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3081411251
+    locked: 0
+  - name: Tilemap
+    uniqueID: 4216476281
+    locked: 0
+  - name: Golem
+    uniqueID: 679691973
+    locked: 0
+  - name: NoLights
+    uniqueID: 927182927
+    locked: 0
