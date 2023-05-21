@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 6709265863144782303}
   - component: {fileID: 5414042105473229958}
   - component: {fileID: 7965225284186545960}
+  - component: {fileID: 4247800261082732582}
   m_Layer: 9
   m_Name: XenosLight
   m_TagString: Player
@@ -212,6 +213,26 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!95 &4247800261082732582
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7317869612347694322}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bdf882bc8be8be4cbe3d4769facd325, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8821534070407333903
 GameObject:
   m_ObjectHideFlags: 0

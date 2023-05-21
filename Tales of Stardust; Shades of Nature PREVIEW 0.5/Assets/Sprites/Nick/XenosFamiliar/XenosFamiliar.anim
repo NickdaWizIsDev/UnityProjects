@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dash
+  m_Name: XenosFamiliar
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 1862306691, guid: c76537260e90fca4e984df9621ccf0ba, type: 3}
-    - time: 0.033333335
+    - time: 0.16666667
       value: {fileID: -1734588917, guid: c76537260e90fca4e984df9621ccf0ba, type: 3}
-    - time: 0.06666667
+    - time: 0.33333334
       value: {fileID: 1132273688, guid: c76537260e90fca4e984df9621ccf0ba, type: 3}
-    - time: 0.1
+    - time: 0.5
       value: {fileID: 1380260011, guid: c76537260e90fca4e984df9621ccf0ba, type: 3}
-    - time: 0.13333334
+    - time: 0.6666667
       value: {fileID: 160260686, guid: c76537260e90fca4e984df9621ccf0ba, type: 3}
     attribute: m_Sprite
     path: 
@@ -58,7 +58,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.15
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
