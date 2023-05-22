@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3ed0538e7ac2bdd4aba274477ec678f9
+guid: ed15d6758def2ce46bcb9594c2af2101
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40523d35ed566d44390021ad434ff8ed
-      internalID: 1948423945
+      spriteID: 95ba4b82b665cf74aa4cdcc5d9f14df5
+      internalID: 1658441105
       vertices: []
       indices: 
       edges: []
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b842fec2a9d73746a0b41cb93410149
-      internalID: 1780889120
+      spriteID: 3f8f6cb136c66f7418dc216ea53f9ba2
+      internalID: -1747048773
       vertices: []
       indices: 
       edges: []
@@ -150,8 +150,8 @@ TextureImporter:
       name: Nick_Running_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 256
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5475fb119b41d5249aa7eb947887157d
-      internalID: 80799290
+      spriteID: 901aec338709cca4ebba12987f593c75
+      internalID: 1692375900
       vertices: []
       indices: 
       edges: []
@@ -171,6 +171,27 @@ TextureImporter:
       name: Nick_Running_3
       rect:
         serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463afbbf1168d8d48a064ae8da10c15a
+      internalID: -338173832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nick_Running_4
+      rect:
+        serializedVersion: 2
         x: 128
         y: 128
         width: 128
@@ -182,14 +203,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fd5cdbf496c7d94d96c44011570b8ff
-      internalID: -1818959388
+      spriteID: b8a7d506b2adc5a4b895eff5db157a32
+      internalID: -1078295442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nick_Running_4
+      name: Nick_Running_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f37525d1d6e2174ca4610442d40e2d0
+      internalID: 791453393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nick_Running_6
       rect:
         serializedVersion: 2
         x: 0
@@ -203,29 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 831d124243fee5149973c235a9133de6
-      internalID: 596509499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nick_Running_5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ade98659f5f9364e90d72d661f02e94
-      internalID: -245247410
+      spriteID: d5f30b7a6cb064943aeed7457ddad691
+      internalID: -388868537
       vertices: []
       indices: 
       edges: []
@@ -241,12 +262,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Nick_Running_1: 1780889120
-      Nick_Running_4: 596509499
-      Nick_Running_5: -245247410
-      Nick_Running_2: 80799290
-      Nick_Running_3: -1818959388
-      Nick_Running_0: 1948423945
+      Nick_Running_1: -1747048773
+      Nick_Running_4: -1078295442
+      Nick_Running_5: 791453393
+      Nick_Running_2: 1692375900
+      Nick_Running_6: -388868537
+      Nick_Running_3: -338173832
+      Nick_Running_0: 1658441105
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
