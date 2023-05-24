@@ -5,7 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/StartScene.unity
+    guid: 47730413a30674f4799bfeae068dabd5
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/MainMenu.unity
+    guid: ca67c39c004b98e45a5c6c2223220ebd
+  - enabled: 1
+    path: Assets/Scenes/CaveSystem.unity
+    guid: 3da64ded4c2000946a90bb4ece3f67d9
+  - enabled: 1
+    path: Assets/Scenes/GolemChase.unity
+    guid: a7aaf23056c90e242a3981d40eadc79a
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 6949fa3a650987d4eba8d32f88bfc9e7
+  - enabled: 1
+    path: Assets/Scenes/GameEnd.unity
+    guid: 4f1fc044a25119945a96afc811c20621
   m_configObjects: {}
