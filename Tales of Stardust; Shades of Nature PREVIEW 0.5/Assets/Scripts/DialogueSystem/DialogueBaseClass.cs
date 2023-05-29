@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Text;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -8,25 +9,20 @@ namespace DialogueSystem
 {
     public class DialogueBaseClass : MonoBehaviour
     {
-        public bool finished { get; private set; }
-        protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, TextColorGradient textColor, float delay, float delayBetweenLines)
+        public bool Finished { get; protected set; }
+        protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, TMPro.VertexGradient textColor, float delay, AudioClip sound)
         {
-            if (textHolder == null)
-            {
-                Debug.LogError("textHolder parameter is null!");
-                yield break;
-            }
-            StringBuilder sb = new StringBuilder(input.Length);
+            textHolder.colorGradient = textColor;
 
             for (int i = 0; i < input.Length; i++)
             {
-                sb.Append(input[i]);
-                textHolder.text = sb.ToString();
+                textHolder.text += input[i];
+                SoundManager.instance.PlaySound(sound);
                 yield return new WaitForSeconds(delay);
             }
 
             yield return new WaitUntil(() => Input.GetMouseButton(0));
-            finished = true;
+            Finished = true;
         }
     }
 }

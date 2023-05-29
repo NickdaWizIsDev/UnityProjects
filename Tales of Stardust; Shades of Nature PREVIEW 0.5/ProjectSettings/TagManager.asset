@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Enemy
   - Xenos
+  - dialogueTrigger
+  - Sword
+  - EnemyDamage
   layers:
   - Default
   - TransparentFX
@@ -14,15 +17,15 @@ TagManager:
   - Background
   - Water
   - UI
-  - Golem
+  - 
   - Ground
   - UIOnTop
   - Player
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Golem
+  - PlayerHits
+  - EnemyHits
+  - TransitionCollider
   - 
   - 
   - 
@@ -47,11 +50,11 @@ TagManager:
   - name: BackTiles
     uniqueID: 3951212031
     locked: 0
-  - name: BackTiles
-    uniqueID: 3068680663
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: SludgeLayer
+    uniqueID: 2888927679
     locked: 0
   - name: Player
     uniqueID: 3081411251

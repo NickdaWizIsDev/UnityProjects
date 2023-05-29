@@ -8,8 +8,12 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth;
 
     public TMP_Text healthDisplay;
-    public AudioSource audioSource;
-    public AudioClip damageSound;
+    public Damageable hp;
+    private void Awake()
+    {
+        healthDisplay = GetComponent<TMP_Text>();
+        hp = GetComponent<Damageable>();
+    }
 
     void Start()
     {
@@ -17,26 +21,18 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthDisplay();
     }
 
-    public void TakeDamage(int damage)
+    private void FixedUpdate()
     {
-        currentHealth -= damage;
+        currentHealth = hp.Health;
+    }
 
-        if (currentHealth <= 0)
+    private void Update()
+    {
+        if (!hp.IsAlive)
         {
-            SceneManager.LoadScene("GameOver"); // Load the Menu scene when health reaches 0
+            SceneManager.LoadScene("GameOver");
         }
-
-        UpdateHealthDisplay();
-        PlayDamageSound();
     }
-
-    public void Heal(int amount)
-    {
-        currentHealth += amount;
-        currentHealth = Mathf.Min(currentHealth, maxHealth); // Clamp current health to not exceed max health
-        UpdateHealthDisplay();
-    }
-
     public int GetCurrentHealth()
     {
         return currentHealth;
@@ -50,14 +46,6 @@ public class PlayerHealth : MonoBehaviour
     void UpdateHealthDisplay()
     {
         healthDisplay.SetText("Health: " + currentHealth + "/" + maxHealth);
-    }
-
-    void PlayDamageSound()
-    {
-        if (audioSource != null && damageSound != null)
-        {
-            audioSource.PlayOneShot(damageSound);
-        }
     }
 }
 
