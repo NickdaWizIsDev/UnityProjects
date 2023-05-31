@@ -15,15 +15,21 @@ EditorBuildSettings:
     path: Assets/Scenes/2_MainMenu.unity
     guid: ca67c39c004b98e45a5c6c2223220ebd
   - enabled: 1
-    path: Assets/Scenes/3_CaveSystem.unity
+    path: Assets/Scenes/3_Tutorial.unity
+    guid: 60a20c1badf707f4ca5df67f85d6075c
+  - enabled: 1
+    path: Assets/Scenes/4_CaveSystem.unity
     guid: 3da64ded4c2000946a90bb4ece3f67d9
   - enabled: 1
-    path: Assets/Scenes/4_GolemChase.unity
+    path: Assets/Scenes/5_GolemChase.unity
     guid: a7aaf23056c90e242a3981d40eadc79a
   - enabled: 1
-    path: Assets/Scenes/5_GameEnd.unity
+    path: Assets/Scenes/GameEnd.unity
     guid: 4f1fc044a25119945a96afc811c20621
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 6949fa3a650987d4eba8d32f88bfc9e7
+  - enabled: 1
+    path: Assets/Scenes/CombatArena.unity
+    guid: 3f7fee4b320a4ee4a916997f4ded4d17
   m_configObjects: {}

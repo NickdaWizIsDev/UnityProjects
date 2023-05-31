@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameEnd : MonoBehaviour
+public class ToTheCaves : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            SceneManager.LoadScene("5_GameEnd");
-        }
+        SceneManager.LoadScene("4_CaveSystem");
     }
 }

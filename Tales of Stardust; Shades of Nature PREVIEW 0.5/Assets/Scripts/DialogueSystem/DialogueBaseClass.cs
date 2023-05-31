@@ -10,7 +10,7 @@ namespace DialogueSystem
     public class DialogueBaseClass : MonoBehaviour
     {
         public bool Finished { get; protected set; }
-        protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, TMPro.VertexGradient textColor, float delay, AudioClip sound)
+        protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, VertexGradient textColor, float delay, AudioClip sound)
         {
             textHolder.colorGradient = textColor;
 

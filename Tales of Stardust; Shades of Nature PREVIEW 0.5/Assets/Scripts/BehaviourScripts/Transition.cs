@@ -7,6 +7,6 @@ public class Transition : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("4_GolemChase");
+        SceneManager.LoadScene("5_GolemChase");
     }
 }

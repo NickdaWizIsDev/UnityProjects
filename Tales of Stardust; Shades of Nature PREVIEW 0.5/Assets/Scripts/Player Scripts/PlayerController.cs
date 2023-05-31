@@ -6,23 +6,49 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D))]
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2d;
+    private BoxCollider2D touchingCol;
+    public ContactFilter2D castFilter;
+    public float groundDistance = 0.05f;
+    RaycastHit2D[] groundHits = new RaycastHit2D[5];
 
     private DialogueTrigger trigger;
 
+    private Damageable damageable;
+
+    private Dash dash;
+
+    private TouchingDirections touchingDirections;
+
+    [SerializeField]
+    private bool isGrounded;
+    public bool IsGrounded
+    {
+        get
+        {
+            return isGrounded;
+        }
+        private set
+        {
+            isGrounded = value;
+            animator.SetBool(AnimationStrings.isGrounded, value);
+        }
+    }
+
     Vector2 moveInput;
     public float runSpeed = 7.5f;
+
     public float CurrentMoveSpeed
     {
         get
         {
-            if (CanMove && !InDialogue())
+            if (CanMove && !InDialogue() && !touchingDirections.IsOnWall)
             {
-                if (IsMoving && !touchingDirections.IsOnWall)
+                if (IsMoving)
                 {
                     return runSpeed;
                 }
@@ -35,6 +61,10 @@ public class PlayerController : MonoBehaviour
             {
                 return 0;
             }
+        }
+        set
+        {
+
         }
     }
     private bool isMoving;
@@ -59,12 +89,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private TouchingDirections touchingDirections;
     private int jumpCount = 0;
     public float jumpImpulse = 7.5f;
     private readonly float fallGravityScale = 4f;
-
-    Damageable damageable;
 
     private Animator animator;
     private bool isFacingRight = true;
@@ -85,18 +112,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public AudioSource curretAudioSource;
+    public AudioSource currentAudioSource;
     public AudioClip swordSwing;
 
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        touchingCol = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<Damageable>();
+        dash = GetComponent<Dash>();
+        touchingDirections = GetComponent<TouchingDirections>();
 
-        if(curretAudioSource == null)
-            curretAudioSource = GetComponent<AudioSource>();
+        if(currentAudioSource == null)
+            currentAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -116,8 +145,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!damageable.IsHit)
+        IsGrounded = touchingCol.Cast(Vector2.down, castFilter, groundHits, groundDistance) > 0;
+
+        if (!damageable.IsHit)
             rb2d.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb2d.velocity.y);
+        if (dash.IsDashing)
+        {
+            rb2d.velocity = new Vector2(dash.dashSpeed * transform.localScale.x, rb2d.velocity.y);
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -145,19 +180,19 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (touchingDirections.IsGrounded)
+        if (IsGrounded)
         {
             jumpCount = 0;
             Debug.Log("Jumps reset!");
         }
 
-        if (jumpCount == 0 && context.started && CanMove && !InDialogue())
+        if (jumpCount == 0 && context.started && CanMove && !InDialogue() && !dash.IsDashing)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpImpulse);
             jumpCount++;
             animator.SetTrigger(AnimationStrings.jump);
         }
-        else if (jumpCount < 1 && context.started && CanMove && !InDialogue())
+        else if (jumpCount < 1 && context.started && CanMove && !InDialogue() && !dash.IsDashing)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpImpulse);
             jumpCount++;
@@ -172,13 +207,13 @@ public class PlayerController : MonoBehaviour
     public void OnAttack(InputAction.CallbackContext context)
     {
 
-        if (context.started && !InDialogue())
+        if (context.started && !InDialogue() && !dash.IsDashing)
         {
-            if(touchingDirections.IsGrounded)
-                animator.SetTrigger(AnimationStrings.atk);
+            if(IsGrounded)
+                animator.SetBool(AnimationStrings.atk, true);
             else
             {
-                animator.SetTrigger(AnimationStrings.atk2);
+                animator.SetBool(AnimationStrings.atk2, true);
             }
         }
     }
@@ -196,7 +231,7 @@ public class PlayerController : MonoBehaviour
 
         Destroy(audioObject, swordSwing.length);
 
-        curretAudioSource = audioSource;
+        currentAudioSource = audioSource;
     }
 
     private bool InDialogue()

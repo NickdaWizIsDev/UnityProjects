@@ -11,7 +11,7 @@ public class Attack : MonoBehaviour
     {
         Damageable damageable = collision.GetComponent<Damageable>();
 
-        if(damageable != null)
+        if(damageable != null && !damageable.isInvincible)
         {
             bool gotHit = damageable.Hit(baseDamage, knockback);
 

@@ -53,14 +53,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tilemap
+    uniqueID: 4216476281
+    locked: 0
   - name: SludgeLayer
     uniqueID: 2888927679
     locked: 0
   - name: Player
     uniqueID: 3081411251
-    locked: 0
-  - name: Tilemap
-    uniqueID: 4216476281
     locked: 0
   - name: Golem
     uniqueID: 679691973

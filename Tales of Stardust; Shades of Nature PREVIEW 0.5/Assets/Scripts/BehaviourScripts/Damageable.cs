@@ -76,7 +76,6 @@ public class Damageable : MonoBehaviour
     public AudioClip dmgClip;
     public AudioClip deathClip;
 
-    [SerializeField]
     public bool isInvincible;
     public bool IsHit
     {
@@ -96,7 +95,7 @@ public class Damageable : MonoBehaviour
             }
         } 
     }
-    public float iFrames = 0.25f;
+    public float iFrames = 0.5f;
     private float timeSinceHit = 0;
     Animator animator;
 

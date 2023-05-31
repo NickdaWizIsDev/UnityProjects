@@ -49,7 +49,14 @@ public class Laser : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        else if (collision.gameObject.CompareTag(groundTag))
+        {
+            Destroy(gameObject); // Destroy the bullet
+        }
+    }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         if (collision.gameObject.CompareTag(groundTag))
         {
             Destroy(gameObject); // Destroy the bullet

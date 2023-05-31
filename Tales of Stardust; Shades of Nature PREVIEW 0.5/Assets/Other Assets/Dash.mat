@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: Dash
   m_Shader: {fileID: 4800000, guid: 967877e8179d10743bb05215b76f1f68, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -41,8 +41,8 @@ Material:
     - _EnableExternalAlpha: 0
     - _GlowIntensity: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.76686984, b: 0, a: 1}
+    - _Color: {r: 0, g: 0.02276084, b: 0.41509432, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 1, g: 0.7467847, b: 0, a: 1}
+    - _GlowColor: {r: 0, g: 0.04024693, b: 0.5849056, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
