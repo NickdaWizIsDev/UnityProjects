@@ -33,7 +33,7 @@ public class Menu : MonoBehaviour
 
     public void Level2()
     {
-        SceneManager.LoadScene("5_GolemChase");
+        SceneManager.LoadScene("Cutscene");
         Time.timeScale = 1f;
     }
 }
