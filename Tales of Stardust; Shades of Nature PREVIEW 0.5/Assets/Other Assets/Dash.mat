@@ -39,7 +39,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _GlowIntensity: 1
+    - _GlowIntensity: 3
     m_Colors:
     - _Color: {r: 0, g: 0.02276084, b: 0.41509432, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

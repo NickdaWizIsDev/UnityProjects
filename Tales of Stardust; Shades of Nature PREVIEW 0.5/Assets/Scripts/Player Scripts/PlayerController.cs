@@ -11,10 +11,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    private BoxCollider2D touchingCol;
-    public ContactFilter2D castFilter;
-    public float groundDistance = 0.05f;
-    RaycastHit2D[] groundHits = new RaycastHit2D[5];
 
     private DialogueTrigger trigger;
 
@@ -23,21 +19,6 @@ public class PlayerController : MonoBehaviour
     private Dash dash;
 
     private TouchingDirections touchingDirections;
-
-    [SerializeField]
-    private bool isGrounded;
-    public bool IsGrounded
-    {
-        get
-        {
-            return isGrounded;
-        }
-        private set
-        {
-            isGrounded = value;
-            animator.SetBool(AnimationStrings.isGrounded, value);
-        }
-    }
 
     Vector2 moveInput;
     public float runSpeed = 7.5f;
@@ -118,11 +99,12 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        touchingCol = GetComponent<BoxCollider2D>();
+        touchingDirections = GetComponent<TouchingDirections>();
         animator = GetComponent<Animator>();
         damageable = GetComponent<Damageable>();
         dash = GetComponent<Dash>();
         touchingDirections = GetComponent<TouchingDirections>();
+        trigger = GetComponent<DialogueTrigger>();
 
         if(currentAudioSource == null)
             currentAudioSource = GetComponent<AudioSource>();
@@ -130,7 +112,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
         animator.SetFloat(AnimationStrings.yVelocity, rb2d.velocity.y);
 
         if (rb2d.velocity.y < 0)
@@ -145,8 +126,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        IsGrounded = touchingCol.Cast(Vector2.down, castFilter, groundHits, groundDistance) > 0;
-
         if (!damageable.IsHit)
             rb2d.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb2d.velocity.y);
         if (dash.IsDashing)
@@ -180,7 +159,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (IsGrounded)
+        if (touchingDirections.IsGrounded)
         {
             jumpCount = 0;
             Debug.Log("Jumps reset!");
@@ -209,7 +188,7 @@ public class PlayerController : MonoBehaviour
 
         if (context.started && !InDialogue() && !dash.IsDashing)
         {
-            if(IsGrounded)
+            if(touchingDirections.IsGrounded)
                 animator.SetBool(AnimationStrings.atk, true);
             else
             {

@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/4_CaveSystem.unity
     guid: 3da64ded4c2000946a90bb4ece3f67d9
   - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: bab4ed952f81bd9478fc4b8460b2e21c
+  - enabled: 1
     path: Assets/Scenes/5_GolemChase.unity
     guid: a7aaf23056c90e242a3981d40eadc79a
   - enabled: 1

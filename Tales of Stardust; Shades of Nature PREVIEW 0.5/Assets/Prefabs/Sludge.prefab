@@ -143,7 +143,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1406039617
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 10
   m_Sprite: {fileID: -764922764, guid: c2ff443992d598e4b9373157a373bd8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -225,7 +225,7 @@ MonoBehaviour:
   health: 10
   isAlive: 1
   audioSource: {fileID: 7099740650917205052}
-  deathAudioSource: {fileID: 0}
+  deathAudioSource: {fileID: 7099740650917205052}
   dmgClip: {fileID: 8300000, guid: 4216ecf518d848646883a159919763e0, type: 3}
   deathClip: {fileID: 8300000, guid: 0e95e1a0e1254aa4f835c3b913ebe0a9, type: 3}
   isInvincible: 0
@@ -258,10 +258,8 @@ MonoBehaviour:
     maxNormalAngle: 0
   groundDistance: 0.05
   wallDistance: 0.2
-  ceilingDistance: 0.05
   isGrounded: 0
   isOnWall: 0
-  isOnCeiling: 0
 --- !u!114 &2009985410477645420
 MonoBehaviour:
   m_ObjectHideFlags: 0

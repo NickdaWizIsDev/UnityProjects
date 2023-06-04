@@ -19,4 +19,7 @@ public class AnimationStrings : MonoBehaviour
     internal static string isHit = "isHit";
     internal static string isAwake = "isAwake";
     internal static string isShooting = "isShooting";
+    internal static string isEnraged = "isEnraged";
+    internal static string hasTarget = "hasTarget";
+    internal static string attackCooldown = "attackCooldown";
 }
